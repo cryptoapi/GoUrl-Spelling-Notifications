@@ -1,0 +1,44 @@
+/**
+ * GoUrl Spelling Notifications, 2015 year
+ *
+ * @link https://gourl.io/php-spelling-notifications.html
+ * @version 1.0
+ * @license GPLv3 or later
+ */
+
+#splwin {
+background-image:url(gourlspelling3.png);
+position:absolute;
+margin:auto;
+top:0;
+left:0;
+z-index:999;
+width:100%;
+}
+
+* html #splwin {
+background-image:none;
+}
+
+#splwin #splwindow {
+position:absolute;
+background:#fff;
+border:5px solid #aaa;
+border-radius:10px;
+overflow:auto;
+width:370px;
+height:400px;
+z-index:150;
+}
+
+#splwin #splframe {
+border:0;
+overflow:auto;
+width:100%;
+height:380px;
+}
+
+* html #splwin #splframe {
+margin-top:7px;
+}
+    
