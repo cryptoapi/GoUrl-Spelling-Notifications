@@ -3,7 +3,7 @@
  *
  * @link https://gourl.io/php-spelling-notifications.html
  * @version 1.0
- * @license GPLv3 or later
+ * @license GPLv2
  */
 
 #splwin {
@@ -41,4 +41,4 @@ height:380px;
 * html #splwin #splframe {
 margin-top:7px;
 }
-    
+   

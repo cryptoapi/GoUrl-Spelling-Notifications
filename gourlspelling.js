@@ -3,7 +3,7 @@
  *
  * @link https://gourl.io/php-spelling-notifications.html
  * @version 1.0
- * @license GPLv3 or later
+ * @license GPLv2
  */
 
 var spl_scripts = document.getElementsByTagName('script'),
@@ -64,3 +64,4 @@ function spl_call() {
     var t = spl_get_sel_text();
     t.selected_text.length > 400 ? alert("Please select no more than 400 characters!") : 0 == t.selected_text.length ? alert("Please select the spelling error!") : (spl = spl_get_sel_context(t), spl_show_win())
 }
+    

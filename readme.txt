@@ -18,7 +18,7 @@ Nice and simple php script - no external websites needed!
 
 ## License
 
-GoUrl Spelling Notifications is released under the GPL v3 (or later) license
+GoUrl Spelling Notifications is released under the GPLv2 license
 
 
 ## Requirements
@@ -42,5 +42,3 @@ GoUrl Spelling Notifications is released under the GPL v3 (or later) license
 
 
 See https://gourl.io/php-spelling-notifications.html
-      
-
