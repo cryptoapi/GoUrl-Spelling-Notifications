@@ -25,8 +25,8 @@ if(isset($_POST['submit']) && $_POST['submit'])
 {
 	$title 	 = 'Spelling Error on '.$_SERVER["SERVER_NAME"]. ', '.date("F j, Y, g:i a");
 	$url 	 = htmlspecialchars(substr(trim($_POST['url']), 0, 2000));
-	$spl 	 = substr(trim($_POST['spl']), 0, 2000);
-	$comment = htmlspecialchars(substr(trim($_POST['comment']), 0, 20000));
+	$spl 	 = substr(trim(stripslashes($_POST['spl'])), 0, 2000);
+	$comment = htmlspecialchars(substr(trim(stripslashes($_POST['comment'])), 0, 20000));
 	$agent	 = htmlspecialchars(trim($_SERVER['HTTP_USER_AGENT']));
 	if (!$from_email) $from_email = 'server@'.$_SERVER["SERVER_NAME"];
 	if (!$to_email)   $to_email = 'webmaster@'.$_SERVER["SERVER_NAME"];
@@ -68,32 +68,30 @@ if(isset($_POST['submit']) && $_POST['submit'])
 	<title>Send email notification to webmaster</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" rel="stylesheet">
-	<script> 
-	var p=top;function loaddata(){null!=p&&(document.forms.splwin.url.value=p.splloc);null!=p&&(document.forms.splwin.spl.value=p.spl);if("undefined"==typeof p.spl || "undefined"==typeof p.splloc) {document.getElementById("submit").disabled = true;document.getElementById("cancel").disabled = true;}}function hide(){var a=p.document.getElementById("splwin");a.parentNode.removeChild(a)};window.onkeydown=function(event){if(event.keyCode===27){hide()}};
-	</script>
+	<script> var p=top;function loaddata(){null!=p&&(document.forms.splwin.url.value=p.splloc);null!=p&&(document.forms.splwin.spl.value=p.spl);if("undefined"==typeof p.spl || "undefined"==typeof p.splloc) {document.getElementById("submit").disabled = true;document.getElementById("cancel").disabled = true;}}function hide(){var a=p.document.getElementById("splwin");a.parentNode.removeChild(a)};window.onkeydown=function(event){if(event.keyCode===27){hide()}};</script>
 	<style>#m strong{color:red}.container{margin-top:20px}</style>
 	</head>
 	<body onload=loaddata()>
 		<div class="container">
 			<p><b>Spelling or Grammar Error</b></p>
-			<div class="pull-right" style="margin:-44px -10px 0 0;"><a href="javascript:void(0)" onclick="hide()" title="Close" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></a></div>
-			
+			<div class="pull-right" style="margin:-44px -10px 0 0;"><a href="javascript:void(0)" onclick="hide()" title="Close Window" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></a></div>
+		
 			<?php if(isset($_POST['submit']) && $_POST['submit']) : ?>
+		
+				<br><br><br>
 			
-				<br><br>
-				
 				<?php if($result) : ?>
 					<div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok"></span>
-						&#160;Thank you! Your message has been successfully sent, we highly appreciate your support!
+						&#160;Thank you! Your message has been successfully sent, we highly appreciate your support !
 					</div>
 				<?php else : ?>
 					<br>
 					<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-sign"></span>
-						&#160;Error! Message not sent, Please try again!
+						&#160;Error! Message not sent, Please try again !
 					</div>
 				<?php endif; ?>
 					
-				<br><br><div style="text-align:center; margin-left:-50px"><a target="_blank" href="https://gourl.io/php-spelling-notifications.html"><img alt='GoUrl Spelling Notifications' title='GoUrl Spelling Notifications' src='gourlspelling2.png'></a><a href="https://gourl.io/php-spelling-notifications.html" target="_blank" title="">GoUrl Spelling Notifications &#187;</a></div>
+				<br><br><div style="text-align:center; margin-left:-20px"><a target="_blank" href="https://gourl.io/php-spelling-notifications.html"><img alt='GoUrl Spelling Notifications' title='GoUrl Spelling Notifications' src='gourlspelling2.png'></a><a href="https://gourl.io/php-spelling-notifications.html" target="_blank" title="">GoUrl Spelling Notifications &#187;</a></div>
 				<br><br><br><div style="text-align:center"><input class="btn btn-danger btn-sm" onclick="hide()" type="button" value="Close Window" id="cancel" name="cancel"></div>
 
 			<?php else : ?>
@@ -105,10 +103,10 @@ if(isset($_POST['submit']) && $_POST['submit'])
 					<input class="form-control input-sm" id="url" type="text" name="url" size="35" readonly="readonly">
 					<label style="font-weight:lighter;margin-top:8px;">Describe the error and offer a solution:</label>
 					<textarea class="form-control" style="margin-bottom:11px;" id="comment" rows="4" name="comment" required="required" autofocus="autofocus"></textarea>
-					<div style="position:absolute;right:20px;bottom:5px;width:60px"><a target="_blank" href="https://gourl.io/php-spelling-notifications.html"><img alt='GoUrl Spelling Notifications' title='GoUrl Spelling Notifications' src='gourlspelling2.png'></a></div>
 					<input class="btn btn-success btn-sm" type="submit" value="<?php echo htmlentities($send_button); ?>" id='submit' name="submit"> &#160;
 					<input class="btn btn-danger btn-sm" onclick="hide()" type="button" value="Cancel" id="cancel" name="cancel">
-				</form>
+					<div style="position:absolute;right:30px;bottom:5px;width:60px"><a target="_blank" href="https://gourl.io/php-spelling-notifications.html"><img alt='GoUrl Spelling Notifications' title='GoUrl Spelling Notifications' src='gourlspelling2.png'></a></div>
+				</form>                
 	
 			<?php endif; ?>
 		</div>
