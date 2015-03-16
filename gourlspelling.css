@@ -23,22 +23,27 @@ background-image:none;
 #splwin #splwindow {
 position:absolute;
 background:#fff;
-border:5px solid #aaa;
 border-radius:10px;
 overflow:auto;
 width:470px;
-height:400px;
+height:410px;
 z-index:150;
+padding:4px;
+border:1px solid #ccc;
+-o-box-shadow: 0 0 10px #999;
+-moz-box-shadow: 0 0 10px #999;
+-webkit-box-shadow: 0 0 10px #999;
+box-shadow: 0  0 10px #999;
 }
 
 #splwin #splframe {
 border:0;
 overflow:auto;
 width:100%;
-height:380px;
+height:395px;
 }
 
 * html #splwin #splframe {
 margin-top:7px;
-}
+}                 
    

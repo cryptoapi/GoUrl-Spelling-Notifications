@@ -16,7 +16,7 @@ nN = navigator.appName, document.onkeypress = spl_get_text;
 function spl_create_win() {
     var t = document.createElement("div"),
         e = dde.scrollTop || db.scrollTop,
-        n = e + 250 + "px",
+        n = e + 220 + "px",
         o = Math.floor(dde.clientWidth / 2) - 250 + "px";
     return t.innerHTML = '<div id="splwin"><div id="splwindow" style="top:' + n + "; left:" + o + '";><iframe frameborder="0" name="spl" id="splframe" src="' + spl_path + 'gourlspelling.php"></iframe></div></div></div>', t.firstChild
 }

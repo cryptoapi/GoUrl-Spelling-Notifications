@@ -82,12 +82,12 @@ if(isset($_POST['submit']) && $_POST['submit'])
 			
 				<?php if($result) : ?>
 					<div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok"></span>
-						&#160;Thank you! Your message has been successfully sent, we highly appreciate your support !
+						&#160;Thank you! Your message has been successfully sent, we highly appreciate your support!
 					</div>
 				<?php else : ?>
 					<br>
 					<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-sign"></span>
-						&#160;Error! Message not sent, Please try again !
+						&#160;Error! Message not sent, Please try again!
 					</div>
 				<?php endif; ?>
 					
@@ -110,5 +110,5 @@ if(isset($_POST['submit']) && $_POST['submit'])
 	
 			<?php endif; ?>
 		</div>
-	</body>
+	</body>  
 </html>
